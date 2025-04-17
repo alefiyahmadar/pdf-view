@@ -4,9 +4,13 @@ import React from 'react';
 import { useState } from 'react';
 import { Document, Page } from 'react-pdf';
 import { pdfjs } from 'react-pdf';
-import pdfFile from './sample.pdf'
 
-pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
+import worker from 'pdfjs-dist/webpack'
+
+
+
+pdfjs.GlobalWorkerOptions.workerSrc = `${process.env.PUBLIC_URL}/pdf.worker.min.js`;
+
 
 
 
@@ -36,6 +40,7 @@ setNumPages(numPages)
 
   return (
     <div className="App">
+      <div>
        <p>pdf</p>
        <input type='file' onChange={onFileChange}  accept='application/pdf'>
        
@@ -53,6 +58,7 @@ setNumPages(numPages)
         
        }
      
+     </div>
     </div>
   );
 }
