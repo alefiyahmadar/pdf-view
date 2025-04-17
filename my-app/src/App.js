@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { Document, Page } from 'react-pdf';
 import { pdfjs } from 'react-pdf';
 
-
+import worker from 'pdfjs-dist/webpack'
 
 
 
