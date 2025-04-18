@@ -47,9 +47,9 @@ setNumPages(numPages)
        </input>
 
        {
-        file && (<Document file={file} onLoadSuccess={onDocumentLoadSuccess}>
+        file && (<Document className={"doc"} file={file} onLoadSuccess={onDocumentLoadSuccess}>
           {Array.from({ length: numPages }, (_, index) => (
-            <Page key={index + 1} pageNumber={index + 1} />
+            <Page className={"page"} key={index + 1} pageNumber={index + 1} />
           ))}
         </Document>
           
